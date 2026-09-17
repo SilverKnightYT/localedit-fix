@@ -1,0 +1,7 @@
+{
+  "name": "LocalEdit",
+  "description": "Edits messages locally without sending updates to Discord.",
+  "author": "LocalEditFix",
+  "main": "index.js",
+  "version": "1.0.0"
+}
