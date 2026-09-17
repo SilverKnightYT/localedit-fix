@@ -56,6 +56,28 @@ export default {
         }
     }
 };
+                        onPress: () => {
+                            showInputTextModal({
+                                title: "Edit Message Locally",
+                                placeholder: "Enter new text...",
+                                initialValue: message.content,
+                                confirmText: "Save",
+                                onConfirm: (newText) => {
+                                    editMessageLocally(message.channel_id, message.id, newText);
+                                }
+                            });
+                        }
+                    });
+                }
+            }
+        });
+    },
+    onUnload: () => {
+        if (unpatchContextMenu) {
+            unpatchContextMenu();
+        }
+    }
+};
 
           if (sheetConfig?.key === "MessageContextMenu" || sheetConfig?.options) {
             const message = sheetConfig?.header?.targetMessage || sheetConfig?.message;
